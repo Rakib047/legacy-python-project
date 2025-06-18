@@ -14,4 +14,4 @@ This project contains a collection of legacy Python 2.x code, which demonstrates
 2. Run the `main.py` script:
 
 ```bash
-python src/main.py
+python main.py
