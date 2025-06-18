@@ -1,39 +1,34 @@
-# legacy_calculator.py
+from typing import Optional
 
-# Old-style print and exception handling
-def add(a, b):
+def add(a: int, b: int) -> int:
     return a + b
 
-def subtract(a, b):
+def subtract(a: int, b: int) -> int:
     return a - b
 
-def multiply(a, b):
+def multiply(a: int, b: int) -> int:
     return a * b
 
-def divide(a, b):
-    try:
-        return a / b
-    except ZeroDivisionError, e:
-        print "Error: Cannot divide by zero!"
-        return None
+def divide(a: int, b: int) -> Optional[float]:
+    if b == 0:
+        raise ValueError("Cannot divide by zero!")
+    return a / b
 
-def main():
+def main() -> None:
     a = 10
     b = 5
-    print "Performing calculations on %d and %d" % (a, b)
+    print(f"Performing calculations on {a} and {b}")
     
-    result = add(a, b)
-    print "Addition Result: %d" % result
+    print(f"Addition Result: {add(a, b)}")
     
-    result = subtract(a, b)
-    print "Subtraction Result: %d" % result
+    print(f"Subtraction Result: {subtract(a, b)}")
     
-    result = multiply(a, b)
-    print "Multiplication Result: %d" % result
+    print(f"Multiplication Result: {multiply(a, b)}")
     
-    result = divide(a, b)
-    if result:
-        print "Division Result: %f" % result
+    try:
+        print(f"Division Result: {divide(a, b)}")
+    except ValueError as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
