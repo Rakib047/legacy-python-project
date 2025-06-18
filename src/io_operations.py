@@ -1,12 +1,15 @@
 # src/io_operations.py
 
+import os
+
 def read_file(file_path):
     try:
-        # Simulating file reading in Python 2.x (old-style)
-        file = open(file_path, 'r')
-        content = file.read()
-        print content  # No parentheses in print
-        file.close()
+        # Get the absolute path for the file
+        file_path = os.path.abspath(file_path)
+        # Open and read the file
+        with open(file_path, 'r') as file:
+            content = file.read()
+            print content  # Python 2.x style print
     except IOError, e:
         print "File error:", e
 

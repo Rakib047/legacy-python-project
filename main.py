@@ -1,10 +1,18 @@
 # src/main.py
 
 import sys
-from src.utils.helpers import greet_user
-from src.db_interaction import fetch_user_data
-from src.data_processing import process_data
-from src.io_operations import read_file
+import os
+
+# Add the absolute path of the src directory to the Python path
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(project_root, 'src'))
+
+
+
+from utils.helpers import greet_user
+from db_interaction import fetch_user_data
+from data_processing import process_data
+from io_operations import read_file
 
 # Python 2.x style print statements
 print "Welcome to the Legacy Python 2.x Codebase!"
