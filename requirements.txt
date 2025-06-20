@@ -1,0 +1,17 @@
+ConfigParser==5.2.0
+Queue==2.7.2
+Tkinter==2.7
+base64==1.0.1
+cPickle==1.0.2
+cookielib==1.6.1
+data_processing==1.0.0
+db_interaction==1.0.0
+hashlib==2008.7
+io_operations==1.0.0
+simplejson==3.22.2
+smtplib==2.7
+threading==2.7
+typing==3.12.0
+urllib3==1.26.12
+socket==2.7
+utils==1.0.0
