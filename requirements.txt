@@ -1,4 +1,4 @@
-ConfigParser==3.5.0
+ConfigParser==5.2.0
 Queue==2.7.2
 Tkinter==2.7
 base64==1.0.1
@@ -6,15 +6,11 @@ cPickle==1.0.2
 cookielib==1.6.1
 data_processing==1.0.0
 db_interaction==1.0.0
-hashlib==1.0.0
+hashlib==2022.12.14
 io_operations==1.0.0
-simplejson==3.16.0
+simplejson==3.21.0
 smtplib==2.7
-socket==2.7
 thread==2.7
-typing==3.6.4
-urllib==1.22
-urllib2==2.7
-urlparse==1.0.2
-utils==1.0.0
-wx==3.0.2.0
+typing==0.6.12
+urllib3==1.26.1
+wxPython==4.2.0
