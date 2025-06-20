@@ -1,32 +1,31 @@
-# legacy_network.py
-
 import socket
+from typing import Optional
 
-def create_connection(host, port):
+def create_connection(host: str, port: int) -> Optional[socket.socket]:
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host, port))
-        print "Connection established with %s on port %d" % (host, port)
+        print(f"Connection established with {host} on port {port}")
         return s
-    except socket.error, e:
-        print "Network error: %s" % e
+    except socket.error as e:
+        print(f"Network error: {e}")
         return None
 
-def send_data(conn, data):
+def send_data(conn: socket.socket, data: str) -> None:
     try:
-        conn.sendall(data)
-        print "Data sent: %s" % data
-    except socket.error, e:
-        print "Error sending data: %s" % e
+        conn.sendall(data.encode())
+        print(f"Data sent: {data}")
+    except socket.error as e:
+        print(f"Error sending data: {e}")
 
-def close_connection(conn):
+def close_connection(conn: socket.socket) -> None:
     try:
         conn.close()
-        print "Connection closed."
-    except socket.error, e:
-        print "Error closing connection: %s" % e
+        print("Connection closed.")
+    except socket.error as e:
+        print(f"Error closing connection: {e}")
 
-def main():
+def main() -> None:
     host = 'localhost'
     port = 8080
     connection = create_connection(host, port)
